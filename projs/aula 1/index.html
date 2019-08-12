@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+</head>
+<body>
+	<div id="app">
+		{{ message }}
+		<br><br><br>
+		<div v-if="isvisible" :title="titleDiv">passe o mouse para ver o title</div>
+		<br><br>
+		<ul>
+			<li>sem index</li>
+			<li v-for="qqVar in list">{{ qqVar.text }}</li>
+		</ul>
+		<ul>
+			<li>com index</li>
+			<li v-for="(qqVar, index) in list">{{ index }} - {{ qqVar.text }}</li>
+		</ul>
+
+		<ul>
+			<li>loopar u numero</li>
+			<li v-for="number in 4">{{ number }}</li>
+		</ul>
+
+		<p v-html="myHtml"></p>
+
+
+
+
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script>
+		var vueApp = new Vue({
+			el: '#app',
+			data: {
+				message: 'olá mundo.',
+				titleDiv: 'title aleatorio qq',
+				isvisible: true,
+				list: [
+					{text: 'item 01'},
+					{text: 'item 02'},
+					{text: 'item 03'}
+				],
+				myHtml: '<button> ok </button>'
+			}
+		})
+	</script>
+</body>
+</html>
