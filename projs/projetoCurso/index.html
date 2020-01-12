@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Vue.js</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app">
+		<img src="http://hanashiro.github.io/pokedex/images/pokeball.svg" class="pokeball-back">
+		<input type="text" id="pokeFilter" placeholder="Search" maxlength="20" />
+		<ul class="poke-list">
+			<li v-for="pokemon in pokemonList" class="poke-list-item">
+					<img :src="'http://serebii.net/pokedex-xy/icon/'+pokemon.number+'.png'" />
+				{{ pokemon.name }}
+			</li>
+		</ul>
+		<br><br><hr><br>
+		<button v-on:click="upcounter()">click me!</button>{{ count }}
+		<!-- <button @click="upcounter()">click me!</button>{{ count }} dois pontos é um atalho para atributos e @ é um atalho para eventos -->
+		
+		<br><br><br><br>
+		<emite-evento-teste @change="printSonthing"></emite-evento-teste>
+	
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script src="./js/app.js"></script>
+	<script></script>
+</body>
+</html>

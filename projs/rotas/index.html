@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>FORMS</title>
+</head>
+<body>
+	<div id="app">            
+        <router-link to="/">home</router-link>
+        <router-link to="/about">about</router-link>
+        
+        <hr>
+        
+        <router-view></router-view>
+
+	</div> <!-- // fecha #app -->
+    <script src="https://unpkg.com/vue/dist/vue.js" ></script>
+    <script src="https://unpkg.com/vue-router" ></script>
+	<script>
+
+        const Home = {
+            template: '<div>dzgdhft</div>'
+        }
+        const About = {
+            template: '<div>zjxfjgzfgnc</div>'
+        }
+        const routes= [
+            { path:'/', component: Home },
+            { path:'/about', component: About }
+        ]
+
+        const router = new VueRouter({routes})
+
+		var vueApp = new Vue({
+            el: '#app',
+            router
+		})
+	</script>
+</body>
+</html>

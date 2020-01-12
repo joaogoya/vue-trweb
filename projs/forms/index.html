@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>FORMS</title>
+</head>
+<body>
+	<div id="app">
+			<input type="text" v-model="name"> - {{ name }} <br><br>
+			<input type="checkbox" value="a" v-model="myList">a <br>
+			<input type="checkbox" value="b" v-model="myList">b <br>
+			<input type="checkbox" value="c" v-model="myList">c <br>
+			Lista: {{myList}}
+
+			<br><br><br>
+			<input type="checkbox" :true-value="1" :false-value="25" v-model="otherList">1 <br>
+			Lista: {{otherList}}
+			<br><br><br>
+
+			<input type="radio" value="a" v-model="myRadio">a <br>
+			<input type="radio" value="b" v-model="myRadio">b <br>
+			<input type="radio" value="c" v-model="myRadio">c <br>
+			Lista: {{myRadio}}	
+			
+			<br><br><br>
+			<hr>
+			<select v-model="selected" multiple>
+				<option value="a">a</option>
+				<option value="b">b</option>
+				<option value="c">c</option>
+				<option value="d">d</option>
+			</select>
+			<br>{{selected}}
+			
+
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script>
+		var vueApp = new Vue({
+			el: '#app',
+			data: {
+				name:'',
+				myList: [], //inputs and radios
+				otherList: "",
+				myRadio: '',
+				selected: []
+			}
+		})
+	</script>
+</body>
+</html>
